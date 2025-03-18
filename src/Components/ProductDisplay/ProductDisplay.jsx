@@ -1,11 +1,14 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import './ProductDisplay.css'
 import full_star from '../Assets/images (2).png'
 import no_star from '../Assets/free-star-icon-984-thumb.png'
+import { ShopContext } from '../../Context/ShopContext'
 
 
 const ProductDisplay = (props) => {
+
     const {product} = props;
+    const {addToCart} = useContext(ShopContext)
   return (
     <div className='productdisplay'>
         <div className="productdisplay-left">
@@ -22,11 +25,11 @@ const ProductDisplay = (props) => {
         <div className="productdisplay-right">
             <h1>{product.name}</h1>
             <div className="productdisplay-right-star">
-                <img src={full_star} alt="" />
-                <img src={full_star} alt="" />
-                <img src={full_star} alt="" />
-                <img src={full_star} alt="" />
-                <img src={no_star} alt="" />
+                <img className='star' src={full_star} alt="" />
+                <img className='star' src={full_star} alt="" />
+                <img className='star' src={full_star} alt="" />
+                <img className='star' src={full_star} alt="" />
+                <img className='star' src={no_star} alt="" />
                 <p>(144)</p>
             </div>
             <div className="productdisplay-right-prices">
@@ -36,18 +39,16 @@ const ProductDisplay = (props) => {
             <div className="productdisplay-right-discription">
                 Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aspernatur sed ullam quod nostrum id qui, blanditiis repellat sint ipsum a eius, cupiditate veritatis laboriosam animi, velit temporibus facere nesciunt tempore?
             </div>
-            <div className="productdisplay-right-size">
-                <h1>Select Size</h1>
-                <div className="productdisplay-right-s">
-                    <div>S</div>
-                    <div>M</div>
-                    <div>L</div>
-                    <div>XL</div>
-                    <div>XXl</div>
+            <div className="productdisplay-right-color">
+                <h1>Colors</h1>
+                <div className="productdisplay-right-colors">
+                    <div>Black</div>
+                    <div>Blue</div>
+                    <div>Gold</div>
+                    <div>Silver</div>
                 </div>
             </div>
-            <button>ADD TO CART</button>
-            
+            <button onClick={()=>{addToCart(product.id)}}>ADD TO CART</button>
         </div>
     </div>
   )

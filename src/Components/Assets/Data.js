@@ -1,7 +1,7 @@
-import p1_img from './pexels-mikebirdy-116675.jpg'
-import p2_img from './pexels-mikebirdy-170811.jpg'
-import p3_img from './pexels-sevenstormphotography-575386.jpg'
-import p4_img from './pexels-mikebirdy-136872.jpg'
+import p1_img from "./pexels-mikebirdy-446389.jpg";
+import p2_img from "./pexels-mikebirdy-112460.jpg";
+import p3_img from "./pexels-mikebirdy-116675.jpg";
+import p4_img from "./pexels-mikebirdy-120049.jpg";
 
 let data_products = [
     {
